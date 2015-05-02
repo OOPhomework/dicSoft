@@ -85,11 +85,11 @@ void single_word::set_lable()
 	char choose;
 	cin >> choose;
 	if (choose == 'A')
-		lable = 0;
+		lable = LABEL(0);
 	else if (choose == 'B')
-		lable = 1;
+		lable = LABLE(1);
 	else if (choose == 'c')
-		lable = 2;
+		lable = LABLE(2);
 	else 
 	{
 		cout <<"Sorry , error input!"<<endl;
