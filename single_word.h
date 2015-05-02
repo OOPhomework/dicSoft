@@ -17,7 +17,7 @@ public:
 	int current_time();//return current time;
 	void get_relative_map();
 	void set_lable();
-	friend std::ostream& operator<< (std::ostream &os,const single_word T&);
+	friend std::ostream& operator<< (std::ostream &os,const single_word &T);
 	~single_word();
 private:
 	std::string phonetic_symbol;//yinbiao
@@ -29,6 +29,6 @@ private:
 
 };
 
-std::ostream& operator<< (std::ostream &os,const single_word T&);
+std::ostream& operator<< (std::ostream &os,const single_word &T);
 
 #endif
