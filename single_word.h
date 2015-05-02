@@ -20,10 +20,10 @@ public:
 	friend ostream& operator<< (ostream &os,const single_word T&);
 	~single_word();
 private:
-	string phonetic_symbol;//yinbiao
-	string part_of_speech;//cixing
-	string paraphrase;//shiyi
-	string eg;
+	std::string phonetic_symbol;//yinbiao
+	std::string part_of_speech;//cixing
+	std::string paraphrase;//shiyi
+	std::string eg;
 	LABLE lable;
 	int time;
 
