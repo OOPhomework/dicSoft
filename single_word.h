@@ -9,7 +9,7 @@ enum LABLE{
 	familiar_word,
 	new_word,
 	unstable_word
-}
+};
 class single_word
 {
 public:
