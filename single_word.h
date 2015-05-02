@@ -4,6 +4,7 @@
 #include "mnemonic.h"
 #include "file_operator.h"
 #include <iostream>
+#include <cstring>
 enum LABLE{
 	familiar_word,
 	new_word,
@@ -24,7 +25,7 @@ private:
 	string paraphrase;//shiyi
 	string eg;
 	LABLE lable;
-	int current_time;
+	int time;
 
 };
 
