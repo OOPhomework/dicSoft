@@ -35,14 +35,14 @@ enum LABLE{
 class single_word
 {
 public:
-	single_word(){};
+	single_word(){}
 	void current_time();//return current time;
 	void get_next_time();//get the deadline of review;
 	void get_relative_map();
 	void set_lable();
 	friend std::ostream& operator<< (std::ostream &os,const single_word& T);
 	friend class search_a_word;
-	~single_word(){};
+	~single_word(){}
 private:
 	std::string name;
 	std::string phonetic_symbol;//yinbiao
