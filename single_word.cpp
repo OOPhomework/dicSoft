@@ -85,7 +85,7 @@ void single_word::set_lable()
 	char choose;
 	cin >> choose;
 	if (choose == 'A')
-		lable = LABEL(0);
+		lable = LABLE(0);
 	else if (choose == 'B')
 		lable = LABLE(1);
 	else if (choose == 'c')
