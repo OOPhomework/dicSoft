@@ -17,11 +17,11 @@ struct date
 class count
 {
 public:
-	count();
+	count(){}
 	bool is_leap_year(int);
 	void set_Feb_day(int);
 	void day_count(date);
-	~count();
+	~count(){}
 	date next_time;
 };
 
