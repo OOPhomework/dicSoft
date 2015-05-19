@@ -5,7 +5,7 @@ using namespace std;
 //#include <cstring>
 //-------------------------------count----------------------------------------
 
-int MAX_TIME = 30;
+int REVIEW_DAY = 30;
 int monthDay[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
 
 bool count::is_leap_year(int y)
@@ -26,7 +26,7 @@ void count::day_count (date t0)
 {
 	int count_day = 0;
 	set_Feb_day(t0.year);
-	while(count_day < MAX_TIME)
+	while(count_day < REVIEW_DAY)
 	{
 		++count_day;
 		++ t0.day;
@@ -64,6 +64,7 @@ void single_word::current_time()
 
 void single_word::get_next_time()
 {
+	current_time();
 	count_day.day_count(now_time);
 	new_time.year = count_day.next_time.year;
 	new_time.month = count_day.next_time.month;
@@ -90,9 +91,29 @@ void single_word::set_lable()
 		lable = LABLE(1);
 	else if (choose == 'c')
 		lable = LABLE(2);
-	else 
+	else
 	{
 		cout <<"Sorry , error input!"<<endl;
-		goto error; 
+		goto error;
 	}
+}
+
+ostream& operator<< (ostream &os,const single_word& T)
+{
+	os <<'>'<<T.name
+		<<" [\\"<<T.phonetic_symbol<<"\\]"
+		<<" : "<<endl;
+	/*for (int i = 0;i < T.part_of_speech.size();i++)
+	{
+		os <<i+1<<"."
+			<<T.part_of_speech[i]<<" : "
+			<<T.paraphrase[i]<<endl;
+	}*/
+	os <<'>'<<T.part_of_speech<<endl;
+	os<<">eg:\n";
+	for (int i = 0;i < T.eg.size()-1;i++)
+	{
+		os <<'>'<<T.eg[i]<<endl;
+	}
+	os <<'>'<<T.eg[T.eg.size()-1];
 }

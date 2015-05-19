@@ -1,5 +1,5 @@
-15328
-{[A][sorry][a.一,一个,一只,一件.][I|don't|care|what|a|car|looks|like|as|long|as|it|gets|me|from|A|to|B.][我倒不在乎汽车的样子,|只要能把我从一处载到另一处就行了.][Would|you|do|me|a|favor?][你能帮我一个忙吗？]}
+15328,9892,
+{[A][sorry][a.一,一个,一只,一件][I|don't|care|what|a|car|looks|like|as|long|as|it|gets|me|from|A|to|B.][我倒不在乎汽车的样子,|只要能把我从一处载到另一处就行了.][Would|you|do|me|a|favor?][你能帮我一个忙吗？]}
 {[a.m.][ˌeɪˈem][上午abbr.(antemeridiem的缩写)上午,午前ad.上午,由午夜至中午][]}
 {[abacus][ˈæbəkəs][n.算盘][I|can|use|abacus|skillfully.][我会熟练地打算盘。][The|clerk|reckoned|the|expenditure|last|week|with|an|abacus.][那位职员用算盘将上周的花销计算出来。]}
 {[abandon][əˈbændən][v.放弃,遗弃,沉溺][The|cruel|man|abandoned|his|wife|and|child.][那个狠心的男人抛弃了他的妻儿。][They|had|abandoned|all|hope.][他们已经放弃了一切希望。]}
@@ -3755,7 +3755,7 @@
 {[fridge][frɪdʒ][n.电冰箱][The|butter|will|soften|out|of|the|fridge.][黄油从冰箱中取出会变软.][If|there's|any|food|(left)|over,|put|it|in|the|fridge.][食物要是剩下就放进冰箱里.]}
 {[friend][frend][n.朋友][A|friend|in|need|is|a|friend|indeed.][患难之交才是真朋友。][Our|friend|from|china|will|now|tell|us|about|her|research.][现在我们的中国朋友要向大家介绍她自己的研究情况。]}
 {[friendly][ˈfrendli][a.友好的][He|was|not|very|friendly|to|us.][他对我们不太友善。][Manchester|United|beat|Celtic|in|a|friendly.][曼彻斯特联队在一场友谊比赛中击败了凯尔特队。]}
-{[friends][sorry][n.朋友们][My|friends|and|I|went|to|the|park|together|on|a|cloudless|day.][在一个晴朗的天气里，我和朋友们一起去公园。][Please|hand|on|the|magazine|to|your|friends.][请把这本杂志传给你的朋友们看。]}
+{[friends][friendship][n.朋友们][My|friends|and|I|went|to|the|park|together|on|a|cloudless|day.][在一个晴朗的天气里，我和朋友们一起去公园。][Please|hand|on|the|magazine|to|your|friends.][请把这本杂志传给你的朋友们看。]}
 {[friendship][sorry][n.友谊,友好][Real|friendship|is|more|valuable|than|money.][真正的友谊比金钱更宝贵。][Take|this|ring|as|a|pledge|of|our|friendship.][请接受这个戒指作为我们友谊的信物。]}
 {[fright][fraɪt][n.惊骇,吃惊][He|gave|me|a|fright|by|bursting|into|a|sudden|laughter.][他突然大笑起来，吓了我一跳。][The|horse|took|a|fright|at|the|sound|of|the|explosion.][马听到爆炸声受了惊。]}
 {[frighten][ˈfraɪtn][v.使惊吓,惊恐][He|frightened|the|old|man|into|giving|him|all|the|money.][他恐吓那位老人把所有的钱都给了他。][The|little|baby|was|frightened|by|the|fierce|dog.][那个小孩被恶狗吓坏了。]}
@@ -9889,7 +9889,7 @@
 {[recidivism][rɪˈsɪdɪvɪzəm][n.惯常的犯罪行为][]}
 {[recipe][ˈresəpi][n.食谱,处方,秘诀][What's|your|recipe|for|success?][你取得成功有什么窍门？][He|knows|the|recipe|for|this|dish.][他知道这道菜的烹饪方法。]}
 {[recipient][rɪˈsɪpiənt][n.接受者,收信人][One|who|is|a|recipient|of|hospitality|at|the|home|or|table|of|another.][客人在别人的家中或餐会上受到友好接待的人][The|recipient|of|an|honor.][受誉者接受荣誉的人]}
-{[reciprocal][rɪˈsɪprəkl][a.相互的,互惠的[数］n.倒数][They|show|reciprocal|affection|to|each|other.][他们表达了彼此之间的爱慕。][They|have|a|reciprocal|agreement|to|combat|terrorism.][他们有相互配合的协定，共同与恐怖主义作斗争。]}
+{[reciprocal][rɪˈsɪprəkl][a.相互的,互惠的[数]n.倒数][They|show|reciprocal|affection|to|each|other.][他们表达了彼此之间的爱慕。][They|have|a|reciprocal|agreement|to|combat|terrorism.][他们有相互配合的协定，共同与恐怖主义作斗争。]}
 {[reciprocate][rɪˈsɪprəkeɪt][v.互换,交换,报答][He|reciprocated|by|wishing|her|good|luck.][他也祝她交好运.][I|reciprocate|your|good|wishes.][我也同样祝福你.]}
 {[reciprocation][rɪˌsɪprəˈkeɪʃn][n.报答,互换,往复运动][]}
 {[reciprocity][ˌresɪˈprɑːsəti][n.相互性,相互作用,互惠主义][]}
