@@ -100,8 +100,9 @@ void single_word::set_lable()
 
 ostream& operator<< (ostream &os,const single_word& T)
 {
-	os <<'>'<<T.name
-		<<" [\\"<<T.phonetic_symbol<<"\\]"
+	os <<"************************SEARCH BERIN***********************\n"
+		<<">WORD			"<<T.name
+		<<" [/"<<T.phonetic_symbol<<"/]"
 		<<" : "<<endl;
 	/*for (int i = 0;i < T.part_of_speech.size();i++)
 	{
@@ -109,11 +110,12 @@ ostream& operator<< (ostream &os,const single_word& T)
 			<<T.part_of_speech[i]<<" : "
 			<<T.paraphrase[i]<<endl;
 	}*/
-	os <<'>'<<T.part_of_speech<<endl;
+	os <<">part_of_speech 	"<<T.part_of_speech<<endl;
 	os<<">eg:\n";
 	for (int i = 0;i < T.eg.size()-1;i++)
 	{
-		os <<'>'<<T.eg[i]<<endl;
+		os <<">			"<<T.eg[i]<<endl;
 	}
-	os <<'>'<<T.eg[T.eg.size()-1];
+	os <<">			"<<T.eg[T.eg.size()-1]
+		<<"\n***********************SEARCH END************************";
 }
