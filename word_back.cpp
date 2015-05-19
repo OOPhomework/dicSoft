@@ -1,4 +1,4 @@
-#include "word_back.h"
+/*#include "word_back.h"
 
 class word_back{
 public:
@@ -6,4 +6,4 @@ public:
 
 private:
 	single_word word;
-};
+};*/
