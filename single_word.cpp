@@ -76,27 +76,7 @@ void single_word::get_relative_map()
 
 }
 
-void single_word::set_lable()
-{
-	error : cout <<"Please check a lable for the word : "<<endl;
-	cout <<"A : Familiar\n"
-		 <<"B : New     \n"
-		 <<"c : Unstable\n"
-		 <<endl;
-	char choose;
-	cin >> choose;
-	if (choose == 'A')
-		lable = LABLE(0);
-	else if (choose == 'B')
-		lable = LABLE(1);
-	else if (choose == 'c')
-		lable = LABLE(2);
-	else
-	{
-		cout <<"Sorry , error input!"<<endl;
-		goto error;
-	}
-}
+
 
 ostream& operator<< (ostream &os,const single_word& T)
 {

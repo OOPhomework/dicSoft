@@ -1,9 +1,21 @@
 /*#include "word_back.h"
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <string>
+using namespace std;
+vector<single_word> word_back::words_new;
+vector<single_word> word_back::words_familiar;
+vector<single_word> word_back::words_unstable;
 
-class word_back{
-public:
-	//word& find_word(string s);//查询单词
+void word_back::init_new_words_file()
+{
+	ifstream fin("new_words_file.txt");
+	string line;
+	while(getline(fin,line))
+	{
+		single_word word;
+		word.name = 
+	}
+}*/
 
-private:
-	single_word word;
-};*/

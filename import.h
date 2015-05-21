@@ -9,11 +9,11 @@ class import
 public:
 	import(const char* file):file_name(file){}
 	void init();
-	std::string check_bracket(std::string line,int& i);
-	single_word print_to_single_word(std::string);
 	~import(){}
 	static std::vector<single_word> v;
 private:
+	std::string check_bracket(std::string line,int& i);
+	single_word print_to_single_word(std::string);
 	const char* file_name;
 };
 

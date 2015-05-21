@@ -40,8 +40,8 @@ public:
 	void current_time();//return current time;
 	void get_next_time();//get the deadline of review;
 	void get_relative_map();
-	void set_lable();
 	friend std::ostream& operator<< (std::ostream &os,const single_word& T);
+	friend class word_back;
 	friend class search_a_word;
 	friend class import;
 	friend class mnemonic;
