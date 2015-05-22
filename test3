@@ -1,0 +1,64 @@
+
+
+//Name: find_new_words
+//This part has the function to find new words in a English file and show the meanings of the words.
+
+//#include "search_word.h"
+//#include "import.h"
+//#include "single_word.h"
+#include "find_new_words.h"
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <vector>
+using namespace std;
+int main()
+{
+    //First, we need to open an English file.
+    find_words_from_a_file f1;
+    vector<string> v2;      //To store every word in the English file.
+    cout << "PLease input the file you want to operate: ";
+    string fn1;     //The name of the file.
+    cin >> fn1;
+    ifstream infile(fn1);       //Create a ifstream.
+    if(!infile)
+    {
+        cout << "Error when open the file!" << endl;
+        //return 0;
+    }
+    string store = "";      //Store every line of the English file.
+    string the_whole_file = "";
+    while(getline(infile, store))
+        the_whole_file += store;
+    string words_from_English_file = "";     //Store every word from the English file.
+    for(int i = 0; i < the_whole_file.size(); i += 1)
+    {
+        if(f1.is_letter(the_whole_file[i]))
+        {
+            words_from_English_file += the_whole_file[i];
+        }
+       /* else if(f1.is_symble(the_whole_file[i]))
+        {
+            //需要选择是否存储，暂且空出。
+            f1.clear(words_from_English_file);     //just for inputing the next word.
+        }*/
+        else if(the_whole_file[i] == '-')
+            continue;
+        else
+        {
+            v2.push_back(words_from_English_file);
+            f1.clear(words_from_English_file);
+        }
+    }
+    for(int i = 0; i < v2.size(); i += 1)
+    {
+        cout << v2[i] << "and ";
+    }
+    //Second, we need to use "getline" to store every line into a string.
+    
+    //Third, we have to search in this string and find which word is new, and output it's meaning.
+    
+    //All above should be based on classes which we have owned.
+    
+    return 0;
+}
