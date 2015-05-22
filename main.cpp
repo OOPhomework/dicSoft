@@ -9,6 +9,7 @@ int main(){
 	const char* file_name = "newwords.txt";
 	import iprt0(file_name);
 	iprt0.init();
+	iprt0.import_words_file();
 	//cout <<import::v[0]<<endl;
 	//cout <<"***"<<endl;
 	
@@ -35,7 +36,7 @@ int main(){
 		while(word_you_want != "q")
 		{
 			//cout <<"***"<<endl;
-			bool can_find= sw.search(word_you_want);
+			bool can_find	= sw.search(word_you_want);
 			sw.print();	
 			if (can_find && (choice == "/w"))
 			{

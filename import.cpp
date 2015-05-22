@@ -5,7 +5,8 @@
 #include <string>
 using namespace std;
 
-vector<single_word> import::v;
+vector<single_word> import::v(0);
+vector<vector<single_word> > import::words_back(3,std::vector<single_word>(0));
 
 void import::init()
 {
@@ -25,6 +26,31 @@ void import::init()
 		//cout <<line<<endl;
 		single_word word_add= print_to_single_word(line);
 		v.push_back(word_add);
+	}
+	fin.close();
+}
+
+void import::import_words_file()
+{
+	const char* FILE[3] = {"familiar_words_file","new_words_file.txt","unstable_words_file.txt"};
+	for (int i = 0;i < 3;i++)
+	{
+		ifstream fin(FILE[i]);
+		if (!fin)
+		{
+			cout <<"sorry ,can't find "<<FILE[i]<<endl;
+			cout <<"maybe you set a lable for word first."<<endl;
+			continue ;
+		}
+		string word;
+		search_a_word saw;
+		while (fin >> word)
+		{
+			saw.search(word);
+			//if ()
+			words_back[i].push_back(saw.the_word);
+		}
+		fin.close();//importent or you'll get wrong
 	}
 }
 
@@ -82,4 +108,19 @@ single_word import::print_to_single_word(string line)
 	//cout <<"***"<<endl;
 	}
 	return the_word;
+}
+
+import::~import()
+{
+	const char* FILE[3] = {"familiar_words_file.txt","new_words_file.txt","unstable_words_file.txt"};
+	for (int i =0;i < 3;i++)
+	{
+		ofstream fout(FILE[i]);
+		for (int j = 0;j < words_back[i].size();j++)
+		{
+			fout << words_back[i][j].name<<endl;
+		}
+		fout.close();
+	}
+
 }

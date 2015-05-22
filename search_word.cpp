@@ -26,7 +26,7 @@ void search_a_word::set_lable()
 	error : cout <<"Please check a lable for the word : "<<endl;
 	cout <<"A : Familiar\n"
 		 <<"B : New     \n"
-		 <<"C : Unstable\n"
+		 <<"C : Unstable"
 		 <<endl;
 	char choose;
 	cin >> choose;
@@ -34,39 +34,55 @@ void search_a_word::set_lable()
 		the_word.lable = LABLE(0);
 	else if (choose == 'B')
 		the_word.lable = LABLE(1);
-	else if (choose == 'c')
+	else if (choose == 'C')
 		the_word.lable = LABLE(2);//check the lable;
 	else
 	{
 		cout <<"Sorry , error input!"<<endl;
 		goto error;
 	}
-	output_file(the_word.lable);
+	add_word_back(the_word.lable);
 }
 
-void search_a_word::output_file(LABLE lable)
+void search_a_word::add_word_back(LABLE lable)
 {
 	const char* out_file;
 	string s;
-	if (lable == 0)
+	for (int i = 0;i < 3;i++)
 	{
-		out_file = "familiar_words_file.txt";
+		//		cout <<"***"<<endl;
+		for (int j =0;j < import::words_back[i].size();j++)
+		{
+			//cout <<import::words_back[i][j].name<<endl;
+			//cout <<(the_word.name == import::words_back[i][j].name)<<endl;
+			if (the_word.name == import::words_back[i][j].name)
+			{
+				if (int(lable) == i)
+				{
+					cout <<"You have added the word to word_note!"<<endl;
+					return ;
+				}
+				else if (int(lable) != i)
+				{
+					///cout <<"***"<<endl;
+					//cout <<LABLE(lable);
+					import::words_back[i].erase(import::words_back[i].begin()+j);
+					continue;
+				}
+				//remove???
+			}
+		}
 	}
-	else if(lable == 1)
+	//cout <<"***"<<endl;
+	switch (int(lable))
 	{
-		out_file = "new_words_file.txt";
+		case 0:
+			import::words_back[0].push_back(the_word);cout <<">>>familiar"<<endl;break;
+		case 1:
+			import::words_back[1].push_back(the_word);cout <<">>>new"<<endl;break;
+		case 2:
+			import::words_back[2].push_back(the_word);cout <<">>>unstable"<<endl;break;
 	}
-	else if (lable == 2)
-	{
-		out_file = "unstable_words_file.txt";
-	}
-	else
-	{
-		cout <<"error LABLE lable!!!"<<endl;
-	}
-
-	ofstream fout(const_cast<const char*>(out_file));
-	fout <<'['<<the_word.name<<']'<<endl;
 }
 
 void search_a_word :: print()

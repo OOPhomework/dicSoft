@@ -14,8 +14,9 @@ public:
 	void set_lable();	
 	void print();
 	//void print_to_single_word(std::string line,int pos);
+	friend class import;
 private:
-	void output_file(LABLE);
+	void add_word_back(LABLE);
 	
 	single_word the_word;
 	std :: string store;
