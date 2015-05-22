@@ -1,0 +1,32 @@
+//
+//  find_new_words.h
+//  find_new_words
+//
+//  Created by Timeless‘ on 15/5/21.
+//  Copyright (c) 2015年 TsingHua. All rights reserved.
+//
+
+#ifndef __find_new_words__find_new_words__
+#define __find_new_words__find_new_words__
+
+//#include <stdio.h>
+//#include "import.h"
+//#include "search_word.h"
+#include <iostream>
+#include <string>
+#include <cstring>
+#include <fstream>
+class find_words_from_a_file
+{
+public:
+    //find_words_from_a_file(std :: string file_name) : infile(file_name) {}
+   // void open_file();
+    //void read_file();
+    bool is_letter(const char& a);
+   // bool is_symble(const char& a);
+    void clear(std :: string& s);
+private:
+    //std :: ifstream infile();
+};
+
+#endif /* defined(__find_new_words__find_new_words__) */
