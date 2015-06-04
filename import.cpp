@@ -13,7 +13,7 @@ void import::init()
 	ifstream fin(file_name);//must const char*??? to import a value
 	if (!fin)
 	{
-        cout <<"error!"<<endl;
+        cout <<"ERROR OPEN WORDS FILE \"new_words_file.txt\""<<endl;
 	}
 	string line;
 	getline (fin,line);
@@ -32,14 +32,16 @@ void import::init()
 
 void import::import_words_file()
 {
-	const char* FILE[3] = {"familiar_words_file","new_words_file.txt","unstable_words_file.txt"};
+	const char* FILE[3] = {"familiar_words_file.txt","new_words_file.txt","unstable_words_file.txt"};
 	for (int i = 0;i < 3;i++)
 	{
 		ifstream fin(FILE[i]);
 		if (!fin)
 		{
 			cout <<"sorry ,can't find "<<FILE[i]<<endl;
-			cout <<"maybe you set a lable for word first."<<endl;
+			ofstream fout(FILE[i]);
+			cout <<"Creating "<<FILE[i]<<"......"<<endl;
+			cout <<endl;
 			continue ;
 		}
 		string word;
@@ -92,7 +94,7 @@ single_word import::print_to_single_word(string line)
 	string s = check_bracket(line,count);
 	//int size = 0;
 	the_word.part_of_speech = s;
-	
+
 	//cout <<the_word.name<<the_word.part_of_speech<<endl;
 	int index = 0;
 	while(line[++count] != '}')

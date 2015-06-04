@@ -80,7 +80,7 @@ void single_word::get_relative_map()
 
 ostream& operator<< (ostream &os,const single_word& T)
 {
-	os <<"************************SEARCH BERIN***********************\n"
+	os <<"*************************SEARCH BERIN********************\n"//25 front * ,15 back *
 		<<">WORD			"<<T.name
 		<<" [/"<<T.phonetic_symbol<<"/]"
 		<<" : "<<endl;
@@ -97,5 +97,5 @@ ostream& operator<< (ostream &os,const single_word& T)
 		os <<">			"<<T.eg[i]<<endl;
 	}
 	os <<">			"<<T.eg[T.eg.size()-1]
-		<<"\n***********************SEARCH END************************";
+		<<"\n************************SEARCH END*********************";
 }
