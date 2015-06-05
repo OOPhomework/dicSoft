@@ -2,6 +2,8 @@
 #include <string>
 #include <cstring>
 #include <vector>
+#include <time.h>
+#include <cstdlib>
 using namespace std;
 
 class single_word
@@ -17,7 +19,7 @@ public:
 	//vector<string> paraphrase;//shiyi
 	vector<string> eg;
 };
-ostream& operator<< (ostream &os,const single_word& T)
+ofstream& operator<< (ofstream &os,const single_word& T)
 	os <<T.name
 		<<" [\\"<<T.phonetic_symbol<<"\\]"
 		<<" : "<<endl;
@@ -55,7 +57,7 @@ single_word print_to_single_word(string line)
 	string s = check_bracket(line,count);
 	//int size = 0;
 	the_word.part_of_speech = s;
-	
+
 	int index = 0;
 	while(line[++count] != '}')
 		the_word.eg.push_back(check_bracket(line,count));

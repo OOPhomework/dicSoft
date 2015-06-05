@@ -6,18 +6,18 @@
 using namespace std;
 enum LABLE;
 
-bool search_a_word :: search(std :: string word)
+int search_a_word :: search(std :: string word_name)
 {
-	can_find = true;
+	can_find = -1;
 	for (int i = 0;i < import::v.size();i++)
 	{
-		if (import::v[i].name == word)
+		if (import::v[i].name == word_name)
 		{
+            //cout <<i<<endl;
 			the_word = import::v[i];
-			return can_find;
+			can_find = i;
 		}
 	}
-	can_find = false;
 	return can_find;
 }
 
@@ -87,13 +87,13 @@ void search_a_word::add_word_back(LABLE lable)
 
 void search_a_word :: print()
 {
-	if (can_find)
+	if (can_find != -1)
 		cout <<the_word<<endl;
 	else
 	{
 		cout <<">Sorry , can't find this word!\n"
-			<<">May be you should add another thesaurus"
-			<<endl;
-		can_find = true;
+			 <<">May be you should add another thesaurus"
+			 <<endl;
+		can_find = -1;
 	}
 }

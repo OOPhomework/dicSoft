@@ -1,0 +1,6 @@
+abandon
+go
+right
+key
+make
+quit

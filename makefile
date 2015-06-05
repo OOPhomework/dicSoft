@@ -1,5 +1,5 @@
-main.exe: main.o single_word.o mnemonic.o word_back.o import.o search_word.o
-	g++ main.o single_word.o mnemonic.o word_back.o import.o search_word.o -o main.exe
+main.exe: main.o single_word.o mnemonic.o word_back.o import.o search_word.o set_question.o
+	g++ main.o single_word.o mnemonic.o word_back.o import.o search_word.o set_question.o -o main.exe
 main.o:main.cpp
 	g++ -c main.cpp -o main.o
 single_word.o:single_word.cpp
@@ -12,6 +12,8 @@ import.o:import.cpp import.h
 	g++ -c import.cpp -o import.o
 search_word.o:search_word.cpp
 	g++ -c search_word.cpp -o search_word.o
+set_question.o:set_question.cpp
+	g++ -c set_question.cpp -o set_question.o
 clean:
 	rm *.o
 	rm *.exe

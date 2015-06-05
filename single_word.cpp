@@ -76,7 +76,11 @@ void single_word::get_relative_map()
 
 }
 
-
+/*void set_question()
+{
+    cout <<name<<" : "<<endl;
+    if
+}*/
 
 ostream& operator<< (ostream &os,const single_word& T)
 {

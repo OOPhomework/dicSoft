@@ -15,6 +15,7 @@ public:
 
 	static std::vector<single_word> v;
 	static std::vector< std::vector<single_word> > words_back;
+	//familiar_words_file.txt,new_words_file.txt,unstable_words_file.txt
 private:
 	std::string check_bracket(std::string line,int& i);
 	single_word print_to_single_word(std::string);

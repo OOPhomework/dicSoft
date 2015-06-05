@@ -27,6 +27,7 @@ void import::init()
 		single_word word_add= print_to_single_word(line);
 		v.push_back(word_add);
 	}
+	//cout <<"in init()..."<<endl;
 	fin.close();
 }
 
@@ -36,6 +37,7 @@ void import::import_words_file()
 	for (int i = 0;i < 3;i++)
 	{
 		ifstream fin(FILE[i]);
+		//cout <<"in "<<FILE[i]<<"..."<<endl;
 		if (!fin)
 		{
 			cout <<"sorry ,can't find "<<FILE[i]<<endl;
