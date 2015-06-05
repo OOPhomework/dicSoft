@@ -102,4 +102,5 @@ ostream& operator<< (ostream &os,const single_word& T)
 	}
 	os <<">			"<<T.eg[T.eg.size()-1]
 		<<"\n************************SEARCH END*********************";
+	return os;
 }
