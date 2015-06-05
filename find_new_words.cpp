@@ -11,24 +11,28 @@ void find_words_from_a_file :: clear(std::string &s)
 {
     s = "";
 }
-find_words_from_a_file :: find_words_from_a_file(std :: string a)
+find_words_from_a_file :: find_words_from_a_file(const char* a)
 {
 	file_name = a;
-	infile(file_name);
-	if(!infile(file_name))
+	std :: ifstream infile(file_name.c_str());
+	//std::cout << "fuck" << std::endl;
+	if(!infile)
     {
         std :: cout << "Error when open the file!" << std :: endl;
     }
 	store = "";
 	the_whole_file = "";
 	words_from_English_file = "";
+	infile.close();
 }
 void find_words_from_a_file :: read_file()
 {
-	while(getline(infile(file_name), store))
+	std :: ifstream infile(file_name.c_str());
+	while(getline(infile, store))
 	{
 		the_whole_file += store;
 	}
+	infile.close();
 }
 void find_words_from_a_file :: find_words()
 {
@@ -42,7 +46,8 @@ void find_words_from_a_file :: find_words()
             continue;
 		else
 		{
-			v2.push_back(words_from_English_file);
+			if(words_from_English_file != "")
+				v2.push_back(words_from_English_file);
             clear(words_from_English_file);
 		}
 		if(the_whole_file[i + 1] == NULL)
@@ -53,4 +58,5 @@ void find_words_from_a_file :: find_words()
 }
 find_words_from_a_file :: ~find_words_from_a_file()
 {
+	//
 }
