@@ -51,7 +51,8 @@ void word_back_menu()
 
 void check_choice(string& choice)
 {
-    while(choice != "/" && choice != "/w" && choice != "b" && choice != "t" && choice != "0" && choice != "f")
+    while(choice != "/" && choice != "/w" && choice != "b" && 
+    	choice != "t" && choice != "0" && choice != "f")
 	{
 		cout << "Please input the correct choice!" << endl;
 		cin >> choice;
@@ -64,15 +65,6 @@ void get_question();
 void word_back_func();
 
 int main(){
-	//cout << "\033[2J\033[1;1H";
-	/*These are ANSI escape codes. The first one (\033[2J) clears
-	the entire screen (J) from top to bottom (2). The second
-	code (\033[1;1H) positions the cursor at row 1, column 1.
-		All ANSI escapes begin with the sequence ESC[, have zero
-	or more parameters delimited by ;, and end with a command
-	letter (J and H in your case). \033 is the C-style octal
-	sequence for the escape character.
-	*/
 	clear_screen();
 
 	const char* file_name = "newwords.txt";
