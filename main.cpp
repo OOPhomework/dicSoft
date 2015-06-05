@@ -1,5 +1,6 @@
 #include "word_back.h"
 #include "search_word.h"
+#include "find_new_words.h"
 //#include "import.h"???can't
 #include <iostream>
 #include <string>
@@ -35,7 +36,7 @@ void init()
 
 void check_choice(string& choice)
 {
-    while(choice != "/" && choice != "/w" && choice != "b" && choice != "t" && choice != "0")
+    while(choice != "/" && choice != "/w" && choice != "b" && choice != "t" && choice != "0" && choice != "f")
 	{
 		cout << "Please input the correct choice!" << endl;
 		cin >> choice;
@@ -93,6 +94,18 @@ int main(){
             cout << "*************************MANU*********************"<<endl;
             //goto circle;
         }
+        else if(choice == "f")
+        {
+        	//First, we need to open an English file.
+		    cout << "PLease input the file you want to operate: ";
+		    string fn1;     //The name of the file.
+		    cin >> fn1;
+			find_words_from_a_file f1(fn1.c_str());
+			//system("pause");
+			f1.read_file();
+			//system("pause");
+			f1.find_words();		//Now we have got all the words in the English file.
+		}
     }
 	return 0;
 }
