@@ -2,6 +2,7 @@
 #define SEARCH_WORD_H
 #include "single_word.h"
 #include "import.h"
+#include "mnemonic.h"
 #include <string>
 #include <fstream>
 

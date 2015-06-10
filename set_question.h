@@ -14,7 +14,9 @@ public:
 
     ~set_question(){}
 private:
+	void answer_question();
 
+	int right_i;
     single_word question_for_word;
     int index;
 };

@@ -15,6 +15,8 @@ int search_a_word :: search(std :: string word_name)
 		{
             //cout <<i<<endl;
 			the_word = import::v[i];
+			//mnemonic mne(word_name);
+			//mne.creat();
 			can_find = i;
 		}
 	}

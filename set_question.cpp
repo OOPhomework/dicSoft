@@ -2,19 +2,11 @@
 #include "search_word.h"
 #include <iostream>
 #include <cstdlib>
-#include <cstring>
 #include <time.h>
 using namespace std;
 
 
 #include "set_question.h"
-
-/*void set_question::swap_string(string& sa,string& sb)
-{
-    string ss = sa;
-    sa = sb;
-    sb = ss;
-}*/
 
 void set_question::do_question()
 {
@@ -45,7 +37,7 @@ void set_question::do_question()
 
     cout <<">word : "<<question_for_word.name<<endl;
     srand(time(NULL));
-    int right_i = 3;
+    right_i = 3;
     for(int i =0 ;i < 10;i++)
     {
         int x = rand()% 4;
@@ -64,7 +56,8 @@ void set_question::do_question()
         cout <<char('A' + i)<<":"<<means[i]<<endl;
     }
     cout <<">which One:";
-    char choose;
+    cout.flush();
+    /*char choose;
     cin >>choose;
     while ((choose != 'A')&&(choose != 'B')&&(choose != 'C')&&(choose != 'D'))
     {
@@ -78,6 +71,37 @@ void set_question::do_question()
     {
         cout <<"...SORRY...-.-"<<endl;
         cout <<"The right choose is "<<char(right_i + 'A')<<endl;
+    }*/
+    answer_question();
+}
+
+void set_question::answer_question()
+{
+    char choose;
+    cin >>choose;
+    choose = (char)toupper(choose);//***********************
+    while ((choose != 'A')&&(choose != 'B')&&(choose != 'C')&&(choose != 'D'))
+    {
+        cout <<"Error input!!!"<<endl;
+        cout <<"Please input your choose again:";
+        cout.flush();
+        cin >>choose;
+    }
+    if (choose == char(right_i + 'A'))
+        cout <<"Congratulations!!!"<<endl;
+    else
+    {
+        cout <<"...SORRY...-.-"<<endl;
+        cout <<"The right choose is "<<char(right_i + 'A')<<endl;
+        cout <<"get more info?[Y/N] ";
+        cout.flush();
+        char more_info;
+        cin >>more_info;
+        more_info = (char)toupper(more_info);//***********
+        if (more_info == 'Y')
+        {
+            cout << question_for_word <<endl;
+        }
     }
 
 }

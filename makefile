@@ -1,6 +1,6 @@
 main.exe: main.o single_word.o mnemonic.o word_back.o import.o search_word.o set_question.o
 	g++ main.o single_word.o mnemonic.o word_back.o import.o search_word.o set_question.o -o main.exe
-main.o:main.cpp
+main.o:main.cpp require.h welcome.h
 	g++ -c main.cpp -o main.o
 single_word.o:single_word.cpp
 	g++ -c single_word.cpp -o single_word.o

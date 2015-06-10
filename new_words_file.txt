@@ -4,3 +4,4 @@ right
 key
 make
 quit
+search
