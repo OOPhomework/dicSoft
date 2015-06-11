@@ -8,18 +8,15 @@ endif
 
 hpath = .\\h\\
 cpppath = .\\cpp\\
-opath = .\\o\\
 remove = del
 ifeq ($(OS), linux)
 hpath = ./h/
 cpppath = ./cpp/
-opath = ./o/
 remove = rm
 endif
 ifeq ($(OS), mac)
 hpath = ./h/
 cpppath = ./cpp/
-opath = ./o/
 remove = rm
 endif
 
@@ -38,7 +35,7 @@ all: $(TARGET)
 #$(TARGET): $(sOBJECTS) $(HEADERS) $(LIB)
 $(TARGET): $(sOBJECTS) $(HEADERS)
 	@echo "Now Generating $(TARGET) ..."
-	g++ $(sOBJECTS) -o $(TARGET) 
+	g++ $(sOBJECTS) -o $(TARGET)
 #$(LIB): $(lOBJECTS) $(HEADERS)
 #	@echo "Now Generating $(LIB) ..."
 #	ar -rv $(LIB) $(lOBJECTS)
@@ -50,7 +47,7 @@ $(TARGET): $(sOBJECTS) $(HEADERS)
 #	@echo "Now Compiling $< ..."
 #	g++ -c $< -o $@
 clean:
-	$(remove) $(cpppath)*.o *.exe *.gch
+	$(remove) *.o *.exe *.a *.gch
 explain:
 #	@echo "Lib Sources: $(lSOURCES)"
 	@echo "User Sources: $(sSOURCES)"

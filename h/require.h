@@ -44,7 +44,9 @@ void search_func()
 			}
             cout <<"Input Enter...";
             cout.flush();
-			cin.ignore().get(); //Pause Command for Linux Terminal
+			cin.get(); 
+            cin.ignore(1024,'\n');
+
 			clear_screen();
 			search_menu();
 			cout <<">word search : ";

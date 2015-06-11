@@ -4,7 +4,13 @@ using namespace std;
 
 void welcome()
 {
-	cout << "           WELCOME TO DRAGON DREAM                " << endl;
+    cout << "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
+    cout << ">>>     /\\                         /\\          <<<" << endl;
+    cout << ">>>    /  \\        WELCOME        /  \\         <<<" << endl;
+    cout << ">>>             Draon   Dream                  <<<" << endl;
+	cout << ">>>                  ___                       <<<" << endl;
+    cout << ">>>                  000                       <<<" << endl;
+    cout << "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
     cout << "Input Enter...";
     cout.flush();
 }

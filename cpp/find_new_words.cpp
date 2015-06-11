@@ -1,4 +1,4 @@
-#include "find_new_words.h"
+#include "../h/find_new_words.h"
 #include <string>
 #include <iostream>
 #include <cstring>

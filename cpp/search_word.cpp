@@ -1,5 +1,5 @@
-#include "search_word.h"
-#include "import.h"
+#include "../h/search_word.h"
+#include "../h/import.h"
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -15,8 +15,6 @@ int search_a_word :: search(std :: string word_name)
 		{
             //cout <<i<<endl;
 			the_word = import::v[i];
-			//mnemonic mne(word_name);
-			//mne.creat();
 			can_find = i;
 		}
 	}
@@ -89,8 +87,14 @@ void search_a_word::add_word_back(LABLE lable)
 
 void search_a_word :: print()
 {
-	if (can_find != -1)
+	if (can_find != -1){
+		cout <<"********************SEARCH BERIN********************"<<endl;//25 front * ,15 back *
 		cout <<the_word<<endl;
+		mnemonic mne(the_word.name);
+		//cout << "mne._creat" << endl;
+		mne._creat();
+		cout <<"*********************SEARCH END*********************"<<endl;
+	}
 	else
 	{
 		cout <<">Sorry , can't find this word!\n"

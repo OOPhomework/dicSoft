@@ -1,7 +1,8 @@
-#include "import.h"
+#include "../h/import.h"
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <cstdlib>
 #include <string>
 using namespace std;
 
@@ -10,11 +11,15 @@ vector<vector<single_word> > import::words_back(3,std::vector<single_word>(0));
 
 void import::init()
 {
-	ifstream fin(file_name);//must const char*??? to import a value
+	ifstream fin(file_name);
+	//system( "echo $PWD" );
+
+	//cout <<file_name<<endl;
 	if (!fin)
 	{
-        cout <<"ERROR OPEN WORDS FILE \"new_words_file.txt\""<<endl;
+        cout <<"ERROR OPEN WORDS FILE \"../data/newwords.txt\""<<endl;
 	}
+	//cout <<"in import init() function..."<<endl;
 	string line;
 	getline (fin,line);
 	string store = "";
@@ -33,7 +38,9 @@ void import::init()
 
 void import::import_words_file()
 {
-	const char* FILE[3] = {"familiar_words_file.txt","new_words_file.txt","unstable_words_file.txt"};
+	const char* FILE[3] = {"./data/familiar_words_file.txt",
+				"./data/new_words_file.txt",
+				"./data/unstable_words_file.txt"};
 	for (int i = 0;i < 3;i++)
 	{
 		ifstream fin(FILE[i]);
@@ -42,6 +49,7 @@ void import::import_words_file()
 		{
 			cout <<"sorry ,can't find "<<FILE[i]<<endl;
 			ofstream fout(FILE[i]);
+			if (fout)
 			cout <<"Creating "<<FILE[i]<<"......"<<endl;
 			cout <<endl;
 			continue ;
@@ -116,7 +124,9 @@ single_word import::print_to_single_word(string line)
 
 import::~import()
 {
-	const char* FILE[3] = {"familiar_words_file.txt","new_words_file.txt","unstable_words_file.txt"};
+	const char* FILE[3] = {"./data/familiar_words_file.txt",
+				"./data/new_words_file.txt",
+				"./data/unstable_words_file.txt"};
 	for (int i =0;i < 3;i++)
 	{
 		ofstream fout(FILE[i]);

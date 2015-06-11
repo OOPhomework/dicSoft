@@ -1,12 +1,12 @@
 
-#include "search_word.h"
+#include "../h/set_question.h"
+#include "../h/search_word.h"
 #include <iostream>
 #include <cstdlib>
 #include <time.h>
 using namespace std;
 
 
-#include "set_question.h"
 
 void set_question::do_question()
 {

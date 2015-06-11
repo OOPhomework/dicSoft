@@ -3,6 +3,7 @@
 
 //#include "mnemonic.h"
 //#include "file_operator.h"
+//#include "mnemonic.h"
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -32,6 +33,7 @@ enum LABLE{
 	new_word,
 	unstable_word
 };
+
 
 class single_word
 {

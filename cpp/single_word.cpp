@@ -1,4 +1,4 @@
-#include "single_word.h"
+#include "../h/single_word.h"
 #include <iostream>
 #include <ctime>
 using namespace std;
@@ -84,8 +84,7 @@ void single_word::get_relative_map()
 
 ostream& operator<< (ostream &os,const single_word& T)
 {
-	os <<"*************************SEARCH BERIN********************\n"//25 front * ,15 back *
-		<<">WORD			"<<T.name
+	os <<">WORD			"<<T.name
 		<<" [/"<<T.phonetic_symbol<<"/]"
 		<<" : "<<endl;
 	/*for (int i = 0;i < T.part_of_speech.size();i++)
@@ -95,12 +94,11 @@ ostream& operator<< (ostream &os,const single_word& T)
 			<<T.paraphrase[i]<<endl;
 	}*/
 	os <<">part_of_speech 	"<<T.part_of_speech<<endl;
-	os<<">eg:\n";
+	os<<">eg:"<<endl;
 	for (int i = 0;i < T.eg.size()-1;i++)
 	{
 		os <<">			"<<T.eg[i]<<endl;
 	}
-	os <<">			"<<T.eg[T.eg.size()-1]
-		<<"\n************************SEARCH END*********************";
+	os <<">			"<<T.eg[T.eg.size()-1];
 	return os;
 }

@@ -1,11 +1,11 @@
-#include "word_back.h"
-#include "search_word.h"
+#include "../h/word_back.h"
+#include "../h/search_word.h"
 //#include "find_new_words.h"
-#include "import.h"
-#include "set_question.h"
+#include "../h/import.h"
+#include "../h/set_question.h"
 
-#include "require.h"
-#include "welcome.h"
+#include "../h/require.h"
+#include "../h/welcome.h"
 
 #include <iostream>
 #include <string>
@@ -17,13 +17,14 @@ using namespace std;
 int main(){
 	clear_screen();
 
-	const char* file_name = "newwords.txt";
+	const char* file_name = "./data/newwords.txt";
 	import iprt0(file_name);
 	iprt0.init();
 	iprt0.import_words_file();
 
     welcome();
     cin.get();
+    //cin.ignore(1024,'\n');
     //cin.ignore().get();
     while(choice != "0")
     {

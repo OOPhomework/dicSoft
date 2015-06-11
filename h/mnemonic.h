@@ -12,7 +12,7 @@ public:
     mnemonic(std::string word):word(word){}
     //std::string check_bracket(std::string ,int&);
     //single_word print_to_single_word(std::string s);
-    void creat();//
+    void _creat();//
     ~mnemonic(){}
 private:
     void print_relative();
