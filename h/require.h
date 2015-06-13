@@ -11,7 +11,8 @@ string choice = "";
 
 void clear_screen()
 {
-#ifdef WINDOWS
+//#ifdef WINDOWS
+#ifdef _WIN32 || _WIN64
   std::system ( "CLS" );
 #else
   // Assume POSIX
