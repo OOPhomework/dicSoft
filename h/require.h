@@ -52,7 +52,7 @@ void search_func()
 			cout <<">word search : ";
             cout.flush();
 			cin >> word_you_want;
-		}		//为什么无法创建该对象？
+		}		
 		choice = "0";
 		/*int position = sw.search(word_you_want);
 		sw.print_to_single_word(position);*/
