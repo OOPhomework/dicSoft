@@ -18,7 +18,7 @@ find_words_from_a_file :: find_words_from_a_file(const char* a)
 {
 	file_name = a;
 	std :: ifstream infile(file_name);
-	//std::cout << "fuck" << std::endl;
+	std::cout << "fuck" << std::endl;
 	if(!infile)
     {
         std :: cout << ">Error when open the English file: " <<file_name<<"!"<< std :: endl;
@@ -93,12 +93,12 @@ void find_words_from_a_file :: fuckyou()
     if(the_whole_file == "")
         return;
     std :: ofstream fout("./data/new_words_in_file");
-    fout << ">The new words in the file: " << std :: endl;
     if(!fout)
     {
         std :: cout << ">Error when open the new_words_in_file.txt!" << std :: endl;
         return;
     }
+    fout << ">The new words in the file: " << std :: endl;
     std :: cout << ">The new words in the English file: " << std :: endl;
     for(int i = 0; i < v2.size(); i += 1)
     {
@@ -126,4 +126,5 @@ void find_words_from_a_file :: fuckyou()
             }
         }
     }
+	fout.close();
 }
