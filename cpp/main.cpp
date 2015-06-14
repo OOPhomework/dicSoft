@@ -19,11 +19,9 @@ int main(){
 	clear_screen();
 
 	const char* file_name = "./data/newwords.txt";
-	/*#ifdef _WIN32 || _WIN64
-        #ifdef WINDOWS
+	#ifdef _WIN32 || _WIN64
 		  file_name = "./data/newwords(1).txt";
-        #endif
-	#endif*/
+	#endif
 	import iprt0(file_name);
 	iprt0.init();
 	iprt0.import_words_file();

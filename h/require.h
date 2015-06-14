@@ -27,9 +27,23 @@ void search_func()
 		search_a_word sw;
 		search_menu();
 		cout << ">word search:";
+
+        /*#ifdef _WIN32 || _WIN64
+            fstream fout("a.out",ios_base::app);
+            fout << ">word search:";
+            fout.close();
+        #endif*/
+
         cout.flush();
 		string word_you_want;
 		cin >> word_you_want;
+
+        /*#ifdef _WIN32 || _WIN64
+            fstream fout("a.out",ios_base::app);
+            fout << word_back_want<<endl;
+            fout.close();
+        #endif*/
+
 		while((word_you_want != "0"))
 		{
             if (word_you_want == "-1")
