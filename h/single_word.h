@@ -6,6 +6,7 @@
 //#include "mnemonic.h"
 #include <iostream>
 #include <string>
+#include <fstream>
 #include <cstring>
 #include <vector>
 
@@ -46,6 +47,8 @@ public:
 	//void get_relative_map();
 	//void set_question();
 	friend std::ostream& operator<< (std::ostream &os,const single_word& T);
+    friend std :: ofstream& operator<< (std :: ofstream& fs, const single_word& T);
+    friend class find_words_from_a_file;
 	friend class word_back;
 	friend class search_a_word;
 	friend class import;
@@ -67,7 +70,7 @@ private:
 };
 
 std::ostream& operator<< (std::ostream &os,const single_word& T);
-
+std :: ofstream& operator<< (std :: ofstream& fs, const single_word& T);
 #endif
 
 

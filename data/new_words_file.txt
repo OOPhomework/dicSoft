@@ -6,4 +6,3 @@ make
 quit
 search
 friend
-
