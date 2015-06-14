@@ -1,5 +1,6 @@
 #include "../h/single_word.h"
 #include <iostream>
+#include <fstream>
 #include <ctime>
 using namespace std;
 //#include <cstring>
@@ -101,4 +102,18 @@ ostream& operator<< (ostream &os,const single_word& T)
 	}
 	os <<">			"<<T.eg[T.eg.size()-1];
 	return os;
+}
+ofstream& operator<< (ofstream& fs, const single_word& T)
+{
+    fs << ">WORD		 " << T.name
+        <<" [/"<<T.phonetic_symbol<<"/]"
+        <<" : "<<endl;
+    fs << ">part_of_speech   " << T.part_of_speech << endl;
+    fs << ">eg:" << endl;
+    for (int i = 0;i < T.eg.size()-1;i++)
+    {
+        fs <<">			"<<T.eg[i]<<endl;
+    }
+    fs <<">			"<<T.eg[T.eg.size()-1];
+    return fs;
 }

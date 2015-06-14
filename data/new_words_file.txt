@@ -5,3 +5,5 @@ key
 make
 quit
 search
+switch
+friend

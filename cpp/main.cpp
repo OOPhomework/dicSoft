@@ -1,6 +1,6 @@
 #include "../h/word_back.h"
 #include "../h/search_word.h"
-//#include "find_new_words.h"
+#include "../h/find_new_words.h"
 #include "../h/import.h"
 #include "../h/set_question.h"
 
@@ -57,18 +57,22 @@ int main(){
             //cout <<"Sorry, word_test hav't done!"<<endl;
             //goto circle;
         }
-        /*else if(choice == "f")
+        else if(choice == "f")
         {
         	//First, we need to open an English file.
 		    cout << "PLease input the file you want to operate: ";
 		    string fn1;     //The name of the file.
-		    cin >> fn1;
-			find_words_from_a_file f1(fn1.c_str());
-			//system("pause");
-			f1.read_file();
-			//system("pause");
-			f1.find_words();		//Now we have got all the words in the English file.
-		}*/
+		    while(cin >> fn1)
+            {
+                find_words_from_a_file f1(fn1.c_str());
+                f1.read_file();
+                f1.find_words();		//Now we have got all the words in the English file.
+                //f1.print();
+                f1.fuckyou();
+                cin.get();
+                cin.ignore(1024, '\n');
+            }
+		}
     }
 	return 0;
 }
