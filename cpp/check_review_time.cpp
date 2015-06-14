@@ -111,8 +111,10 @@ void check_review_time::review_test()
 	{
 		set_question stqs(import::words_back[fir[i]][sec[i]]);
 		stqs.do_question();
-		import::words_back[fir[i]][sec[i]].review_index++;
-		import::words_back[fir[i]][sec[i]].get_next_time(import::words_back[fir[i]][sec[i]].review_index);
+		int &k = import::words_back[fir[i]][sec[i]].review_index;
+		if (k != 4)
+			k ++;
+		import::words_back[fir[i]][sec[i]].get_next_time(k);
 		
 		
 		cout <<"Input Enter...";
