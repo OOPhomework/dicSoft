@@ -100,7 +100,9 @@ void set_question::answer_question()
         more_info = (char)toupper(more_info);//***********
         if (more_info == 'Y')
         {
+            cout << "******************MORE INFO******************"<<endl;
             cout << question_for_word <<endl;
+            cout << "*********************END*********************"<<endl;
         }
     }
 

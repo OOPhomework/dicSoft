@@ -87,12 +87,6 @@ ostream& operator<< (ostream &os,const single_word& T)
 	os <<">WORD			"<<T.name
 		<<" [/"<<T.phonetic_symbol<<"/]"
 		<<" : "<<endl;
-	/*for (int i = 0;i < T.part_of_speech.size();i++)
-	{
-		os <<i+1<<"."
-			<<T.part_of_speech[i]<<" : "
-			<<T.paraphrase[i]<<endl;
-	}*/
 	os <<">part_of_speech 	"<<T.part_of_speech<<endl;
 	os<<">eg:"<<endl;
 	for (int i = 0;i < T.eg.size()-1;i++)
