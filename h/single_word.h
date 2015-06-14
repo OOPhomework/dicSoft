@@ -10,25 +10,25 @@
 #include <vector>
 
 //----------------------------class count & relative----------------------------------
-
-class count
-{
-public:
-	count(){}
-	void day_count(date);
-	~count(){}
-	date next_time;
-private：
-	bool is_leap_year(int);
-	void set_Feb_day(int);
-};
-//---------------------class single_word & relative-----------------------------------
 struct date
 {
 	int year;
 	int month;
 	int day;
 };
+
+class count
+{
+public:
+	count(){}
+	void day_count(date);
+	bool is_leap_year(int);
+	void set_Feb_day(int);
+	~count(){}
+	date next_time;
+private:
+};
+//---------------------class single_word & relative-----------------------------------
 
 enum LABLE{
 	familiar_word,
@@ -46,12 +46,10 @@ public:
 	//void get_relative_map();
 	//void set_question();
 	friend std::ostream& operator<< (std::ostream &os,const single_word& T);
-    friend std :: ofstream& operator<< (std :: ofstream& fs, const single_word& T);
 	friend class word_back;
 	friend class search_a_word;
 	friend class import;
 	friend class mnemonic;
-    friend class find_words_from_a_file;
 	friend class set_question;
 	~single_word(){}
 private:
@@ -69,7 +67,6 @@ private:
 };
 
 std::ostream& operator<< (std::ostream &os,const single_word& T);
-std :: ofstream& operator<< (std :: ofstream& fs, const single_word& T);
 
 #endif
 
