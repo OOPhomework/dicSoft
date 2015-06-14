@@ -109,6 +109,7 @@ void word_back_func()
     cout <<">A:back  B:next  C:end"<<endl;
     cin >>ch;
     ch = (char)toupper(ch);//*************upper character
+	//cin.ignore(1024,'\n');
     //cout <<ch<<endl;
     while(ch == 'B')
     {
@@ -144,6 +145,7 @@ void word_test_func()
     cout <<">A:back  B:next  C:end"<<endl;
     cin >>ch;
     ch = (char)toupper(ch);//*************upper character
+	
     while(ch == 'B')
     {
         clear_screen();

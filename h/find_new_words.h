@@ -29,6 +29,9 @@ public:
 		}
 		std :: cout << std :: endl;
 	}
+	
+	void check_ii(int &,std::string);
+	void check_jj(int &,std::string);
 	//std :: ifstream infile(std :: string);
 private:
 	const char* file_name;
