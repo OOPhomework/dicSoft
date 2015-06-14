@@ -7,7 +7,7 @@ void welcome()
     cout << "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
     cout << ">>>     /\\                         /\\          <<<" << endl;
     cout << ">>>    /  \\        WELCOME        /  \\         <<<" << endl;
-    cout << ">>>             Draon   Dream                  <<<" << endl;
+    cout << ">>>             Dragon   Dream                  <<<" << endl;
 	cout << ">>>                  ___                       <<<" << endl;
     cout << ">>>                  000                       <<<" << endl;
     cout << "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
@@ -22,7 +22,7 @@ void init()
     cout << "*>>> /w: Search and set lable for it.            *" <<endl;
     cout << "*>>> b : help for test word in vocabulary book.  *" <<endl;
     cout << "*>>> t : help for random word test.              *" <<endl;
-    //cout << "*>>> # : manner for Dragon Dream.                *" <<endl;
+    cout << "*>>> f : capture vocabulary from files.          *" <<endl;
     cout << "*>>> 0 : quit.                                   *" <<endl;
     cout << "********************MENU END**********************" <<endl;
 }
@@ -43,7 +43,7 @@ void word_back_menu()
     cout << "*                     HELP                       *" <<endl;
 	cout << "*>>> back : back to menu.                        *" <<endl;
 	cout << "*>>> next : continue memorise words in           *" <<endl;
-    cout << "*            vacabulary book.                    *" <<endl;
+    cout << "*            vocabulary book.                    *" <<endl;
 	cout << "*>>> end  : quit Dragon Dream.                   *" <<endl;
     cout << "********************MENU END**********************" <<endl;
 }
