@@ -20,18 +20,18 @@ public:
    // bool is_symble(const char& a);
     void clear(std :: string& s);
 	void find_words();
-	/*void print()
+    void fuckyou();
+	void print()
 	{
 		for(int i = 0; i < v2.size(); i ++)
 		{
 			std :: cout << v2[i] << " ";
-			system("pause");
 		}
 		std :: cout << std :: endl;
-	}*/
+	}
 	//std :: ifstream infile(std :: string);
 private:
-	std :: string file_name;
+	const char* file_name;
 	std :: vector<std :: string> v2;
 	std :: string store;
 	std :: string the_whole_file;

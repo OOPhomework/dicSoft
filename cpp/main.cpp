@@ -1,8 +1,9 @@
 #include "../h/word_back.h"
 #include "../h/search_word.h"
-//#include "find_new_words.h"
+#include "../h/find_new_words.h"
 #include "../h/import.h"
 #include "../h/set_question.h"
+#include "../h/check_review_time.h"
 
 #include "../h/require.h"
 #include "../h/welcome.h"
@@ -18,6 +19,11 @@ int main(){
 	clear_screen();
 
 	const char* file_name = "./data/newwords.txt";
+	/*#ifdef _WIN32 || _WIN64
+        #ifdef WINDOWS
+		  file_name = "./data/newwords(1).txt";
+        #endif
+	#endif*/
 	import iprt0(file_name);
 	iprt0.init();
 	iprt0.import_words_file();
@@ -26,6 +32,11 @@ int main(){
     cin.get();
     //cin.ignore(1024,'\n');
     //cin.ignore().get();
+	
+	clear_screen();
+	check_review_time crt;
+	crt.review_test();
+	
     while(choice != "0")
     {
     	clear_screen();
@@ -57,18 +68,10 @@ int main(){
             //cout <<"Sorry, word_test hav't done!"<<endl;
             //goto circle;
         }
-        /*else if(choice == "f")
+        else if(choice == "f")
         {
-        	//First, we need to open an English file.
-		    cout << "PLease input the file you want to operate: ";
-		    string fn1;     //The name of the file.
-		    cin >> fn1;
-			find_words_from_a_file f1(fn1.c_str());
-			//system("pause");
-			f1.read_file();
-			//system("pause");
-			f1.find_words();		//Now we have got all the words in the English file.
-		}*/
+        	find_words_file_func();
+		}
     }
 	return 0;
 }

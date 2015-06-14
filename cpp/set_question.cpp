@@ -57,21 +57,6 @@ void set_question::do_question()
     }
     cout <<">which One:";
     cout.flush();
-    /*char choose;
-    cin >>choose;
-    while ((choose != 'A')&&(choose != 'B')&&(choose != 'C')&&(choose != 'D'))
-    {
-        cout <<"Error input!!!"<<endl;
-        cout <<"Please input your choose again:";
-        cin >>choose;
-    }
-    if (choose == char(right_i + 'A'))
-        cout <<"Congratulations!!!"<<endl;
-    else
-    {
-        cout <<"...SORRY...-.-"<<endl;
-        cout <<"The right choose is "<<char(right_i + 'A')<<endl;
-    }*/
     answer_question();
 }
 

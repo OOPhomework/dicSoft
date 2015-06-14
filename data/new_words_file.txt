@@ -1,9 +1,2 @@
-abandon
-go
-right
-key
-make
-quit
-search
-friend
-really
+get 115 5 16 1
+really 115 5 16 1

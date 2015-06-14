@@ -60,6 +60,10 @@ void import::import_words_file()
 		{
 			saw.search(word);
 			//if ()
+			fin >>word; saw.the_word.new_time.year = atoi(word.c_str());
+			fin >>word; saw.the_word.new_time.month = atoi(word.c_str());
+			fin >>word; saw.the_word.new_time.day = atoi(word.c_str());
+			fin >>word; saw.the_word.review_index = atoi(word.c_str());
 			words_back[i].push_back(saw.the_word);
 		}
 		fin.close();//importent or you'll get wrong
@@ -132,7 +136,13 @@ import::~import()
 		ofstream fout(FILE[i]);
 		for (int j = 0;j < words_back[i].size();j++)
 		{
-			fout << words_back[i][j].name<<endl;
+			fout <<words_back[i][j].name
+				<<" "<<words_back[i][j].new_time.year
+				<<" "<<words_back[i][j].new_time.month
+				<<" "<<words_back[i][j].new_time.day
+				<<" "<<words_back[i][j].review_index
+				<<endl;
+			//fout << words_back[i][j].name<<" "<<words_back[i][j].review_index<<endl;
 		}
 		fout.close();
 	}

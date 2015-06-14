@@ -8,6 +8,12 @@
 *.gch
 *.pch
 
+# data file
+familiar_words_file.txt
+new_words_file.txt
+unstable_words_file.txt
+new_words_in_file
+
 # Compiled Dynamic libraries
 *.so
 *.dylib
