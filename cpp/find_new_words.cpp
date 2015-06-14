@@ -38,6 +38,8 @@ void find_words_from_a_file :: read_file()
 }
 void find_words_from_a_file :: find_words()
 {
+    if(the_whole_file == "")
+        return;
 	for(int i = 0; i < the_whole_file.size(); i += 1)
     {    
 		if(is_letter(the_whole_file[i]))
