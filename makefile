@@ -27,6 +27,7 @@ import_h = $(hpath)import.h
 mnemonic_h = $(hpath)mnemonic.h
 single_word_h = $(hpath)single_word.h
 find_new_words_h = $(hpath)find_new_words.h
+check_review_time_h = $(hpath)check_review_time.h
 require_h = $(hpath)require.h
 welcome_h = $(hpath)welcome.h
 
@@ -36,14 +37,15 @@ import_cpp = $(cpppath)import.cpp
 mnemonic_cpp = $(cpppath)mnemonic.cpp
 single_word_cpp = $(cpppath)single_word.cpp
 find_new_words_cpp = $(cpppath)find_new_words.cpp
+check_review_time_cpp = $(cpppath)check_review_time.cpp
 main_cpp = $(cpppath)main.cpp
 
 all_h = $(set_question_h) $(search_word_h) $(import_h) $(mnemonic_h) $(single_word_h)\
-			$(find_new_words_h) $(require_h) $(welcome_h)
+			$(find_new_words_h) $(check_review_time_h) $(require_h) $(welcome_h) 
 all_cpp = $(set_question_cpp) $(search_word_cpp) $(import_cpp) $(mnemonic_cpp) $(single_word_cpp)\
-			$(find_new_words_cpp) $(main_cpp)
+			$(find_new_words_cpp) $(check_review_time_cpp) $(main_cpp)
 all_o = main.o\
-			set_question.o search_word.o import.o mnemonic.o single_word.o find_new_words.o
+			set_question.o search_word.o import.o mnemonic.o single_word.o find_new_words.o check_review_time.o
 			
 all : main.exe
 main.exe : $(all_o)
@@ -64,6 +66,8 @@ single_word.o : $(single_word_cpp)
 	g++ -c $(single_word_cpp) -o single_word.o $(byyh)
 find_new_words.o : $(find_new_words_cpp)
 	g++ -c $(find_new_words_cpp) -o find_new_words.o $(byyh)
+check_review_time.o : $(check_review_time_cpp)
+	g++ -c $(check_review_time_cpp) -o check_review_time.o $(byyh)
 
 clean:
 	$(remove) *.o *.exe *.gch

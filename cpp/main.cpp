@@ -3,6 +3,7 @@
 #include "../h/find_new_words.h"
 #include "../h/import.h"
 #include "../h/set_question.h"
+#include "../h/check_review_time.h"
 
 #include "../h/require.h"
 #include "../h/welcome.h"
@@ -26,6 +27,11 @@ int main(){
     cin.get();
     //cin.ignore(1024,'\n');
     //cin.ignore().get();
+	
+	clear_screen();
+	check_review_time crt;
+	crt.review_test();
+	
     while(choice != "0")
     {
     	clear_screen();

@@ -24,19 +24,27 @@ int search_a_word :: search(std :: string word_name)
 void search_a_word::set_lable()
 {
 	error : cout <<"Please check a lable for the word : "<<endl;
-	cout <<"A : Familiar\n"
-		 <<"B : New     \n"
-		 <<"C : Unstable"
+	cout <<"A:Familiar  "
+		 <<"B:New       "
+		 <<"C:Unstable  " 
 		 <<endl;
 	char choose;
 	cin >> choose;
     choose = (char)toupper(choose);//*************upper character
+	if ((choose == 'B')||(choose == 'C'))
+	{
+		the_word.review_index = 0;
+	}
 	if (choose == 'A')
 		the_word.lable = LABLE(0);
-	else if (choose == 'B')
+	else if (choose == 'B'){
 		the_word.lable = LABLE(1);
-	else if (choose == 'C')
+		the_word.get_next_time(the_word.review_index);////////////////////////
+	}
+	else if (choose == 'C'){
 		the_word.lable = LABLE(2);//check the lable;
+		the_word.get_next_time(the_word.review_index);////////////////////////
+	}
 	else
 	{
 		cout <<"Sorry , error input!"<<endl;

@@ -6,7 +6,7 @@ using namespace std;
 //#include <cstring>
 //-------------------------------count----------------------------------------
 
-int REVIEW_DAY = 30;
+const int REVIEW_DAY[4] = {1,2,6,30};
 int monthDay[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
 
 bool count::is_leap_year(int y)
@@ -23,11 +23,11 @@ void count::set_Feb_day(int i)
 	return ;
 }
 
-void count::day_count (date t0)
+void count::day_count (date t0,int review_index)
 {
 	int count_day = 0;
 	set_Feb_day(t0.year);
-	while(count_day < REVIEW_DAY)
+	while(count_day < REVIEW_DAY[review_index])
 	{
 		++count_day;
 		++ t0.day;
@@ -63,10 +63,10 @@ void single_word::current_time()
     //we can caculate the day through to come true the time count;
 }
 
-void single_word::get_next_time()
+void single_word::get_next_time(int review_index)
 {
 	current_time();
-	count_day.day_count(now_time);
+	count_day.day_count(now_time,review_index);
 	new_time.year = count_day.next_time.year;
 	new_time.month = count_day.next_time.month;
 	new_time.day = count_day.next_time.day;

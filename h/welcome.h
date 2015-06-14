@@ -7,7 +7,7 @@ void welcome()
     cout << "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
     cout << ">>>     /\\                         /\\          <<<" << endl;
     cout << ">>>    /  \\        WELCOME        /  \\         <<<" << endl;
-    cout << ">>>             Dragon   Dream                  <<<" << endl;
+    cout << ">>>             Dragon   Dream                 <<<" << endl;
 	cout << ">>>                  ___                       <<<" << endl;
     cout << ">>>                  000                       <<<" << endl;
     cout << "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
@@ -71,6 +71,7 @@ void find_words_menu()
     cout << "*>>> 0  : quit Dragon Dream.                     *" <<endl;
 	cout << "********************MENU END**********************" <<endl;
 }
+
 
 void check_choice(string& choice)
 {
