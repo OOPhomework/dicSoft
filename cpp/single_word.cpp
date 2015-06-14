@@ -72,11 +72,6 @@ void single_word::get_next_time()
 	new_time.day = count_day.next_time.day;
 }
 
-void single_word::get_relative_map()
-{
-
-}
-
 /*void set_question()
 {
     cout <<name<<" : "<<endl;

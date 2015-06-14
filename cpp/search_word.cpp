@@ -30,6 +30,7 @@ void search_a_word::set_lable()
 		 <<endl;
 	char choose;
 	cin >> choose;
+    choose = (char)toupper(choose);//*************upper character
 	if (choose == 'A')
 		the_word.lable = LABLE(0);
 	else if (choose == 'B')

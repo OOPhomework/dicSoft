@@ -8,53 +8,84 @@ endif
 
 hpath = .\\h\\
 cpppath = .\\cpp\\
-opath = .\\o\\
 remove = del
 ifeq ($(OS), linux)
 hpath = ./h/
 cpppath = ./cpp/
-opath = ./o/
 remove = rm
 endif
 ifeq ($(OS), mac)
 hpath = ./h/
 cpppath = ./cpp/
-opath = ./o/
 remove = rm
 endif
 
-byyh = -02 -std=c++11 -w
+byyh = -O2 -std=c++11 -w
+set_question_h = $(hpath)set_question.h
+search_word_h = $(hpath)search_word.h
+import_h = $(hpath)import.h
+mnemonic_h = $(hpath)mnemonic.h
+single_word_h = $(hpath)single_word.h
+find_new_words_h = $(hpath)find_new_words.h
+require_h = $(hpath)require.h
+welcome_h = $(hpath)welcome.h
 
-#lSOURCES=$(wildcard $(cpppath)*.cxx)
-sSOURCES=$(wildcard $(cpppath)*.cpp)
-HEADERS=$(wildcard $(hpath)*.h)
-#lOBJECTS=$(lSOURCES:%.cxx=%.o)
-sOBJECTS=$(sSOURCES:%.cpp=%.o)
-TARGET=main.exe
-#LIB=main.a
+set_question_cpp = $(cpppath)set_question.cpp
+search_word_cpp = $(cpppath)search_word.cpp
+import_cpp = $(cpppath)import.cpp
+mnemonic_cpp = $(cpppath)mnemonic.cpp
+single_word_cpp = $(cpppath)single_word.cpp
+find_new_words_cpp = $(cpppath)find_new_words.cpp
+main_cpp = $(cpppath)main.cpp
 
-#all: $(TARGET) $(LIB)
-all: $(TARGET)
-#$(TARGET): $(sOBJECTS) $(HEADERS) $(LIB)
-$(TARGET): $(sOBJECTS) $(HEADERS)
-	@echo "Now Generating $(TARGET) ..."
-	g++ $(sOBJECTS) -o $(TARGET) 
-#$(LIB): $(lOBJECTS) $(HEADERS)
-#	@echo "Now Generating $(LIB) ..."
-#	ar -rv $(LIB) $(lOBJECTS)
-#	ranlib $(LIB)
-%.o: %.cpp $(HEADERS)
-	@echo "Now Compiling $< ..."
-	g++ -c $< -o $@
-#%.o: %.cxx $(HEADERS)
-#	@echo "Now Compiling $< ..."
-#	g++ -c $< -o $@
+all_h = $(set_question_h) $(search_word_h) $(import_h) $(mnemonic_h) $(single_word_h)\
+			$(find_new_words_h) $(require_h) $(welcome_h)
+all_cpp = $(set_question_cpp) $(search_word_cpp) $(import_cpp) $(mnemonic_cpp) $(single_word_cpp)\
+			$(find_new_words_cpp) $(main_cpp)
+all_o = main.o\
+			set_question.o search_word.o import.o mnemonic.o single_word.o find_new_words.o
+			
+all : main.exe
+main.exe : $(all_o)
+	g++ $(all_o) -o main.exe
+	$(remove) *.o *.gch
+
+main.o : $(main_cpp)
+	g++ -c $(main_cpp) -o main.o $(byyh)
+set_question.o : $(set_question_cpp)
+	g++ -c $(set_question_cpp) -o set_question.o $(byyh)
+search_word.o : $(set_question_cpp)
+	g++ -c $(search_word_cpp) -o search_word.o $(byyh)
+import.o : $(import_cpp)
+	g++ -c $(import_cpp) -o import.o $(byyh)
+mnemonic.o : $(mnemonic_cpp)
+	g++ -c $(mnemonic_cpp) -o mnemonic.o $(byyh)
+single_word.o : $(single_word_cpp)
+	g++ -c $(single_word_cpp) -o single_word.o $(byyh)
+find_new_words.o : $(find_new_words_cpp)
+	g++ -c $(find_new_words_cpp) -o find_new_words.o $(byyh)
+
 clean:
-	$(remove) $(cpppath)*.o *.exe *.gch
-explain:
-#	@echo "Lib Sources: $(lSOURCES)"
-	@echo "User Sources: $(sSOURCES)"
-#	@echo "Lib Objects: $(lOBJECTS)"
-	@echo "User Objects: $(sOBJECTS)"
-#	@echo "Lib: $(LIB)"
-	@echo "Target: $(TARGET)"
+	$(remove) *.o *.exe *.gch
+
+#main.exe: main.o single_word.o mnemonic.o word_back.o import.o search_word.o set_question.o
+#	g++ main.o single_word.o mnemonic.o word_back.o import.o search_word.o set_question.o -o main.exe
+#main.o:main.cpp require.h welcome.h
+#	g++ -c main.cpp -o main.o
+#single_word.o:single_word.cpp single_word.h
+#	g++ -c single_word.cpp -o single_word.o
+#mnemonic.o:mnemonic.cpp mnemonic.h
+#	g++ -c mnemonic.cpp -o mnemonic.o
+#word_back.o:word_back.cpp word_back.h
+#	g++ -c word_back.cpp -o word_back.o
+#import.o:import.cpp import.h
+#	g++ -c import.cpp -o import.o
+#search_word.o:search_word.cpp search_word.h
+#	g++ -c search_word.cpp -o search_word.o
+#set_question.o:set_question.cpp set_question.h
+#	g++ -c set_question.cpp -o set_question.o
+#clean:
+#	rm *.o
+#	rm *.exe
+
+

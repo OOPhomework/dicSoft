@@ -10,6 +10,19 @@
 #include <vector>
 
 //----------------------------class count & relative----------------------------------
+
+class count
+{
+public:
+	count(){}
+	void day_count(date);
+	~count(){}
+	date next_time;
+private：
+	bool is_leap_year(int);
+	void set_Feb_day(int);
+};
+//---------------------class single_word & relative-----------------------------------
 struct date
 {
 	int year;
@@ -17,17 +30,6 @@ struct date
 	int day;
 };
 
-class count
-{
-public:
-	count(){}
-	bool is_leap_year(int);
-	void set_Feb_day(int);
-	void day_count(date);
-	~count(){}
-	date next_time;
-};
-//---------------------class single_word & relative-----------------------------------
 enum LABLE{
 	familiar_word,
 	new_word,
@@ -41,7 +43,7 @@ public:
 	single_word(){}
 	void current_time();//return current time;
 	void get_next_time();//get the deadline of review;
-	void get_relative_map();
+	//void get_relative_map();
 	//void set_question();
 	friend std::ostream& operator<< (std::ostream &os,const single_word& T);
     friend std :: ofstream& operator<< (std :: ofstream& fs, const single_word& T);
