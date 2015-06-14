@@ -31,7 +31,7 @@ public:
 	}
 	//std :: ifstream infile(std :: string);
 private:
-	std :: string file_name;
+	const char* file_name;
 	std :: vector<std :: string> v2;
 	std :: string store;
 	std :: string the_whole_file;

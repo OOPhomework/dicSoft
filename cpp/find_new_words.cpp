@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstring>
 #include <fstream>
+using namespace std;
 bool find_words_from_a_file :: is_letter(char a)
 {
 	return ('a' <= a && a <= 'z') || ('A' <= a && a <= 'Z');
@@ -16,11 +17,11 @@ void find_words_from_a_file :: clear(std::string &s)
 find_words_from_a_file :: find_words_from_a_file(const char* a)
 {
 	file_name = a;
-	std :: ifstream infile(file_name.c_str());
+	std :: ifstream infile(file_name);
 	//std::cout << "fuck" << std::endl;
 	if(!infile)
     {
-        std :: cout << "Error when open the English file!" << std :: endl;
+        std :: cout << ">Error when open the English file: " <<file_name<<"!"<< std :: endl;
     }
 	store = "";
 	the_whole_file = "";
@@ -29,7 +30,7 @@ find_words_from_a_file :: find_words_from_a_file(const char* a)
 }
 void find_words_from_a_file :: read_file()
 {
-	std :: ifstream infile(file_name.c_str());
+	std :: ifstream infile(file_name);
 	while(getline(infile, store))
 	{
 		the_whole_file += store;
@@ -89,20 +90,16 @@ find_words_from_a_file :: ~find_words_from_a_file()
 
 void find_words_from_a_file :: fuckyou()
 {
-    std :: ifstream fin("new_words_file.txt");
-    if(!fin)
-    {
-        std :: cout << "Error when open the new_words_file.txt!" << std :: endl;
+    if(the_whole_file == "")
         return;
-    }
-    std :: ofstream fout("new_words_in_file");
-    fout << "The new words in the file: " << std :: endl;
+    std :: ofstream fout("./data/new_words_in_file");
+    fout << ">The new words in the file: " << std :: endl;
     if(!fout)
     {
-        std :: cout << "Error when open the new_words_in_file.txt!" << std :: endl;
+        std :: cout << ">Error when open the new_words_in_file.txt!" << std :: endl;
         return;
     }
-    std :: cout << "The new words in the English file: " << std :: endl;
+    std :: cout << ">The new words in the English file: " << std :: endl;
     for(int i = 0; i < v2.size(); i += 1)
     {
         for(int j = 0; j < import :: words_back[1].size(); j += 1)
@@ -110,19 +107,13 @@ void find_words_from_a_file :: fuckyou()
             if(v2[i] == import :: words_back[1][j].name)
             {
                 //std :: cout << i << " " << v2[i] << " = " << words_back[1][j].name << std :: endl;
-                std :: cout << import :: words_back[1][j] << std :: endl;
-                fout << import :: words_back[1][j] << std :: endl;
+                std :: cout <<">"<< import :: words_back[1][j] << std :: endl;
+                fout <<">"<< import :: words_back[1][j] << std :: endl;
             }
         }
     }
-    fout << "The unstable words in the file: " << std :: endl;
-    std :: ifstream fin2("unstable_words_file.txt");
-    if(!fin2)
-    {
-        std :: cout << "Error when open the unstable_words_file.txt!" << std :: endl;
-        return;
-    }
-    std :: cout << "The unstable words in the English file: " << std :: endl;
+    fout << ">The unstable words in the file: " << std :: endl;
+    std :: cout << ">The unstable words in the English file: " << std :: endl;
     for(int i = 0; i < v2.size(); i += 1)
     {
         for(int j = 0; j < import :: words_back[2].size(); j += 1)
@@ -130,8 +121,8 @@ void find_words_from_a_file :: fuckyou()
             if(v2[i] == import :: words_back[2][j].name)
             {
                 //std :: cout << i << " " << v2[i] << " = " << words_back[1][j].name << std :: endl;
-                std :: cout << import :: words_back[2][j] << std :: endl;
-                fout << import :: words_back[2][j] << std :: endl;
+                std :: cout <<">"<< import :: words_back[2][j] << std :: endl;
+                fout <<">"<< import :: words_back[2][j] << std :: endl;
             }
         }
     }

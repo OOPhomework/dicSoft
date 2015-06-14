@@ -59,36 +59,7 @@ int main(){
         }
         else if(choice == "f")
         {
-        	//First, we need to open an English file.
-            cout << "PLease input the file you want to operate: ";
-		    string fn1;     //The name of the file.
-		    while(cin >> fn1)
-            {
-                //cout << "PLease input the file you want to operate: ";
-                find_words_from_a_file f1(fn1.c_str());
-                f1.read_file();
-                f1.find_words();		//Now we have got all the words in the English file.
-                //f1.print();
-                cin.get();
-                cin.ignore(1024, '\n');
-
-                f1.fuckyou();
-                cout << "Please choose what you want to do:" << endl;
-                cout << "A. continue    B.quit" << endl;
-                char choice;
-                cin >> choice;
-                if(choice == 'a' || choice == 'A')
-                {
-                    cout << "Please input the file you want to operate: ";
-                    continue;
-                }
-                else if(choice == 'b' || choice == 'B' || choice == '0')
-                    break;
-                if(fn1 == "0")
-                    break;
-                cin.get();
-                cin.ignore(1024, '\n');
-            }
+        	find_words_file_func();
 		}
     }
 	return 0;
